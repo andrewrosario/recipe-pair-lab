@@ -5,32 +5,32 @@ class Form extends Component {
         name: '',
         ingredients: '',
         steps: '',
-        difficulty: ''
+        difficulty: 'Easy'
      }
 
      setName = (event) => {
-         console.log(this.state)
+         //console.log(this.state)
          this.setState({
              name: event.target.value
          })
      }
 
      setIngredients = (event) => {
-        console.log(this.state)
+        //console.log(this.state)
         this.setState({
             ingredients: event.target.value
         })
     }
 
     setSteps = (event) => {
-        console.log(this.state)
+        //console.log(this.state)
         this.setState({
             steps: event.target.value
         })
     }
 
     setDifficulty = (event) => {
-        console.log(this.state)
+        //console.log(this.state)
         this.setState({
             difficulty: event.target.value
         })
@@ -52,20 +52,20 @@ class Form extends Component {
         return ( 
             <form onSubmit={(e) => this.handleSubmit(e)}>
                 <h1>Recipe Maker</h1><br></br>
-                Name <input type='text' value={this.state.name} onChange={(e) => this.setName(e)}></input><br></br><br></br>
+                Name <input type='text' onChange={(e) => this.setName(e)}></input><br></br><br></br>
 
-                Ingredients: <textarea type='textarea' value={this.state.ingredients} onChange={(e) => this.setIngredients(e)}></textarea><br></br><br></br>
+                Ingredients: <textarea type='textarea' onChange={(e) => this.setIngredients(e)}></textarea><br></br><br></br>
 
-                Steps: <textarea value={this.state.steps} onChange={(e) => this.setSteps(e)}></textarea><br></br><br></br>
+                Steps: <textarea onChange={(e) => this.setSteps(e)}></textarea><br></br><br></br>
 
                 Difficult: 
                     <select onChange={(e) => this.setDifficulty(e)}>
-                        <option value='Easy'>Easy</option>
-                        <option value='Medium'>Medium</option>
-                        <option value='Hard'>Hard</option>
+                        <option >Easy</option>
+                        <option >Medium</option>
+                        <option >Hard</option>
                     </select><br></br><br></br>
 
-                    <input type="submit"/>
+                    <input type="submit"/><br></br><br></br>
             </form>
          );
     }
